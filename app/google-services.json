@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "643778303332",
+    "firebase_url": "https://davidmarket-f987a.firebaseio.com",
+    "project_id": "davidmarket-f987a",
+    "storage_bucket": "davidmarket-f987a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643778303332:android:8a05757eae48506e",
+        "android_client_info": {
+          "package_name": "com.example.samuel.davidmarket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643778303332-t0h11st7khvqf1f3u4fepr49ee5sfomd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.samuel.davidmarket",
+            "certificate_hash": "f10186928571bac8c7103438ced537b49bbb3af5"
+          }
+        },
+        {
+          "client_id": "643778303332-cbr0fujn7kul32agsvuq0pnqorttcodu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcQjNCoCTomMk2ByEVjYN9FCl3FDzwmQ4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643778303332-cbr0fujn7kul32agsvuq0pnqorttcodu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

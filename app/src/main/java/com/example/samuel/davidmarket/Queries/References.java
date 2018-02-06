@@ -1,0 +1,29 @@
+package com.example.samuel.davidmarket.Queries;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+/**
+ * Created by Samuel on 01-Feb-18.
+ */
+
+public class References {
+
+    public References() {
+    }
+
+    DatabaseReference firebaseDatabase = FirebaseDatabase.getInstance().getReference();
+
+    public DatabaseReference userReference (){
+        return firebaseDatabase.child("user");
+    }
+
+    public DatabaseReference productsReference(){
+        return firebaseDatabase.child("Products").child("Tomate");
+    }
+
+    public DatabaseReference buyReference(){
+        return firebaseDatabase.child("buy");
+    }
+
+}
