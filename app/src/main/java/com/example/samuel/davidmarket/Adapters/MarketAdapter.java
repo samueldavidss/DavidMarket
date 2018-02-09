@@ -20,29 +20,31 @@ import com.google.firebase.database.Query;
 public class MarketAdapter extends FirebaseRecyclerAdapter<Products,MarketAdapter.buyHolder> {
 
     private ListernerProducts listernerProducts;
-    public MarketAdapter( ListernerProducts listernerProducts) {
+    public MarketAdapter(ListernerProducts listernerProducts) {
         super(Products.class, R.layout.list_item_market, buyHolder.class, new References().productsReference());
         this.listernerProducts=listernerProducts;
 
     }
     @Override
-    protected void populateViewHolder(buyHolder viewHolder, final Products model, int position) {
+    protected void populateViewHolder(final buyHolder viewHolder, final Products model, int position) {
         viewHolder.price.setText(String.valueOf(model.getPrice()));
         viewHolder.measure.setText(model.getMeasure());
-       // viewHolder.produts.setText(model.getProducts());
-        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+        viewHolder.name.setText(model.getName());
+       viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listernerProducts.click(model.getMeasure(),model.getPrice());
+               Products auxProduts= getItem(viewHolder.getAdapterPosition());
+              // Products auxName = getItem()
+               listernerProducts.click(auxProduts,model.getName(),model.getMeasure(),model.getPrice());
             }
         });
     }
 
     public static class buyHolder extends RecyclerView.ViewHolder{
-        private TextView produts, price, measure;
+        private TextView name, price, measure;
         public buyHolder(View itemView) {
             super(itemView);
-          //  produts= (TextView) itemView.findViewById(R.id.productsEt);
+            name= (TextView) itemView.findViewById(R.id.productsEt);
             measure= (TextView) itemView.findViewById(R.id.measureEt);
             price= (TextView) itemView.findViewById(R.id.priceEt);
         }

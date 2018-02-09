@@ -12,10 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.samuel.davidmarket.Adapters.MarketAdapter;
+import com.example.samuel.davidmarket.Models.Products;
 
-public class ProductsFragment extends Fragment implements ListernerProducts{
+public class ProductsFragment extends Fragment {
 
-    private MarketAdapter adapter;
+   // private MarketAdapter adapter;
 
     public ProductsFragment() {
         // Required empty public constructor
@@ -29,15 +30,8 @@ public class ProductsFragment extends Fragment implements ListernerProducts{
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        RecyclerView recyclerView = (RecyclerView) view;
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setHasFixedSize(true);
-        adapter = new MarketAdapter(this);
-        recyclerView.setAdapter(adapter);
+
 
     }
-    @Override
-    public void click(String measure, int price) {
 
-    }
 }

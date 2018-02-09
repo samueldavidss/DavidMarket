@@ -19,7 +19,7 @@ public class References {
     }
 
     public DatabaseReference productsReference(){
-        return firebaseDatabase.child("Products").child("Tomate");
+        return firebaseDatabase.child("Products");
     }
 
     public DatabaseReference buyReference(){
