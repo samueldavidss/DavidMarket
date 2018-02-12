@@ -5,7 +5,7 @@ package com.example.samuel.davidmarket.Models;
  */
 
 public class Users {
-    private String email, name, direccion;
+    private String email, name, direccion, reference, phone,key ;
 
     public Users() {
     }
@@ -32,5 +32,29 @@ public class Users {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    public String getReference() {
+        return reference;
+    }
+
+    public void setReference(String reference) {
+        this.reference = reference;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

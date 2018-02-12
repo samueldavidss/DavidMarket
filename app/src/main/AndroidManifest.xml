@@ -27,7 +27,9 @@
         <activity
             android:name=".CheckoutActivity"
             android:label="@string/title_activity_checkout" />
-        <activity android:name=".DescriptionActivity"></activity>
+        <activity android:name=".DescriptionActivity" />
+        <activity android:name=".Activity.Main2Activity" />
+        <activity android:name=".Main2Activity"></activity>
     </application>
 
 </manifest>

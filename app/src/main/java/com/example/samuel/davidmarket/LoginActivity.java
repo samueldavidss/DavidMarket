@@ -1,10 +1,8 @@
 package com.example.samuel.davidmarket;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.support.v7.app.AppCompatActivity;
 
 import com.example.samuel.davidmarket.Models.Users;
 import com.example.samuel.davidmarket.Queries.CurrentUser;
@@ -65,17 +63,20 @@ public class LoginActivity extends AppCompatActivity {
         DatabaseReference dbRef = new References().userReference().child(new CurrentUser().getCurrentUser().getUid());
         Users user = new Users();
         user.setEmail(new CurrentUser().getCurrentUser().getEmail());
+        user.setKey(new CurrentUser().getCurrentUser().getUid());
+        String key = (new CurrentUser().getCurrentUser().getUid());
         dbRef.setValue(user);
 
-        Intent intent = new Intent(this, MainActivity.class);
+
+
+        Intent intent = new Intent(this, Main2Activity.class);
+        intent.putExtra("key",key);
         startActivity(intent);
         finish();
 
 
-
+///  String key = dtbRef.push().getKey();
     }
-
-
-    }
+}
 
 
