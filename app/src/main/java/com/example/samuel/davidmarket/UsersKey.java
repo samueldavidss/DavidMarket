@@ -6,4 +6,5 @@ package com.example.samuel.davidmarket;
 
 public interface UsersKey {
     void userKey(String key);
+
 }

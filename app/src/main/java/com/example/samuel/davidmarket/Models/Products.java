@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class Products implements Serializable {
 
     private String measure, name;
-    private int price;
+    private String price;
 
     public Products() {
     }
@@ -31,11 +31,11 @@ public class Products implements Serializable {
         this.name = name;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 }

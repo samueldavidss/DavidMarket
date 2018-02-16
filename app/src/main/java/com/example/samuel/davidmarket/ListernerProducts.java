@@ -8,5 +8,5 @@ import com.example.samuel.davidmarket.Models.Products;
 
 public interface ListernerProducts {
 
-  void click (Products products, String name, String measure, int price);
+  void click (Products products, String name, String measure, String price);
 }

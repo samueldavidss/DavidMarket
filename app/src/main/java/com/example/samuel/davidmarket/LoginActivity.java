@@ -12,38 +12,28 @@ import com.firebase.ui.auth.ResultCodes;
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.Arrays;
-
-
 public class LoginActivity extends AppCompatActivity {
-
     private static final int RC_SIGN_IN = 123;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_login);
-
                 if(new CurrentUser().getCurrentUser() !=null){
                     logged();
                 }else{
                     singUp();
                 }
-
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (RC_SIGN_IN==requestCode){
             if(ResultCodes.OK==resultCode){
-                logged();
+                register();
             }
-
         }
     }
-
     private void singUp(){
         startActivityForResult(
                 AuthUI.getInstance()
@@ -55,10 +45,14 @@ public class LoginActivity extends AppCompatActivity {
                         .build(),
                 RC_SIGN_IN);
     }
-
-
     private void logged(){
 
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+
+    }
+    private void register(){
 
         DatabaseReference dbRef = new References().userReference().child(new CurrentUser().getCurrentUser().getUid());
         Users user = new Users();
@@ -66,16 +60,11 @@ public class LoginActivity extends AppCompatActivity {
         user.setKey(new CurrentUser().getCurrentUser().getUid());
         String key = (new CurrentUser().getCurrentUser().getUid());
         dbRef.setValue(user);
-
-
-
         Intent intent = new Intent(this, Main2Activity.class);
         intent.putExtra("key",key);
         startActivity(intent);
         finish();
 
-
-///  String key = dtbRef.push().getKey();
     }
 }
 

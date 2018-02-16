@@ -25,5 +25,9 @@ public class References {
     public DatabaseReference buyReference(){
         return firebaseDatabase.child("buy");
     }
+    public DatabaseReference product(String name){
+
+        return productsReference().child(name);
+    }
 
 }
