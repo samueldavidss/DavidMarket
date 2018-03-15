@@ -46,14 +46,11 @@ public class LoginActivity extends AppCompatActivity {
                 RC_SIGN_IN);
     }
     private void logged(){
-
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
-
     }
     private void register(){
-
         DatabaseReference dbRef = new References().userReference().child(new CurrentUser().getCurrentUser().getUid());
         Users user = new Users();
         user.setEmail(new CurrentUser().getCurrentUser().getEmail());

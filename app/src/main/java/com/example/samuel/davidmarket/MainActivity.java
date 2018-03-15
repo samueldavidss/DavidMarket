@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements ListernerProducts
     public void click(Products products, String name, String measure, String price) {
         Intent intent = new Intent(this,DescriptionActivity.class);
         intent.putExtra(DESCRIPTION,products);
-        intent.putExtra("name",price);
+        intent.putExtra("price",price);
         intent.putExtra("measure",measure);
         intent.putExtra("name", name);
         startActivity(intent);
