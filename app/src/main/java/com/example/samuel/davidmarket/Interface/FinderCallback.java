@@ -1,4 +1,4 @@
-package com.example.samuel.davidmarket;
+package com.example.samuel.davidmarket.Interface;
 
 /**
  * Created by Samuel on 12-Feb-18.

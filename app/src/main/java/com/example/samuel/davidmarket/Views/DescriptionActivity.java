@@ -1,6 +1,5 @@
-package com.example.samuel.davidmarket;
+package com.example.samuel.davidmarket.Views;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,19 +9,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.samuel.davidmarket.Models.Products;
+import com.example.samuel.davidmarket.R;
 
-public class DescriptionActivity extends AppCompatActivity {
+public class DescriptionActivity extends AppCompatActivity{
     private EditText countEt;
     private TextView descrTv;
     private TextView priceTv;
     private TextView totaltv;
     private TextView pruebatv;
+    public String totalR;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description);
-
 
         descrTv= (TextView) findViewById(R.id.descritTv);
         priceTv = (TextView) findViewById(R.id.priceDEt);
@@ -32,9 +32,9 @@ public class DescriptionActivity extends AppCompatActivity {
         countEt = (EditText) findViewById(R.id.countTv);
         Products products = (Products) getIntent().getSerializableExtra(MainActivity.DESCRIPTION);
         getSupportActionBar().setTitle(products.getName());
-        String price = getIntent().getStringExtra("price");
+        final String price = getIntent().getStringExtra("price");
         String measure = getIntent().getStringExtra("measure");
-        String name = getIntent().getStringExtra("name");
+        final String name = getIntent().getStringExtra("name");
      //// descrTv.setText(products.getMeasure());
 
         priceTv.setText(price);
@@ -56,7 +56,7 @@ public class DescriptionActivity extends AppCompatActivity {
                 }else{
                     val1 = val1 + 1;
                     int total = (val1*val2);
-                    String totalR= String.valueOf(total);
+                    totalR= String.valueOf(total);
                     totaltv.setText(totalR);
                 }
             }
@@ -66,17 +66,16 @@ public class DescriptionActivity extends AppCompatActivity {
             public void onClick(View view) {
 
 
-
             }
         });
 ////// Intent de agregar al carrito y main activiy para seguir con la compra
         addcarBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DescriptionActivity.this,MainActivity.class);
-                startActivity(intent);
+
                 Toast.makeText(DescriptionActivity.this, "Producto agregado al carrito", Toast.LENGTH_SHORT).show();
                 finish();
+
             }
         });
 
@@ -91,7 +90,6 @@ public class DescriptionActivity extends AppCompatActivity {
             int total = (val1*val2);
             String totalR= String.valueOf(total);
             totaltv.setText(totalR);
-
         }else{
             val1 = val1 + 1;
             int total = (val1*val2);
@@ -99,4 +97,15 @@ public class DescriptionActivity extends AppCompatActivity {
             totaltv.setText(totalR);
         }
     }
+
+/*    @Override
+    public void clicked(String name, String price, String total) {
+        Intent intent = new Intent(DescriptionActivity.this,MainActivity.class);
+        intent.putExtra("name",name);
+        intent.putExtra("price",price);
+        intent.putExtra("total",totalR);
+
+        Toast.makeText(DescriptionActivity.this, "Producto agregado al carrito", Toast.LENGTH_SHORT).show();
+        finish();
+    }*/
 }

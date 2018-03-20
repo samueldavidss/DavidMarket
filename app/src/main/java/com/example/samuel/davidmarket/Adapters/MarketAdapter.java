@@ -1,17 +1,12 @@
 package com.example.samuel.davidmarket.Adapters;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
-import com.example.samuel.davidmarket.ListernerProducts;
-import com.example.samuel.davidmarket.Models.Buy;
+import com.example.samuel.davidmarket.Interface.ListernerProducts;
 import com.example.samuel.davidmarket.Models.Products;
 import com.example.samuel.davidmarket.Queries.References;
 import com.example.samuel.davidmarket.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
-
-import com.google.firebase.database.Query;
 
 /**
  * Created by Samuel on 02-Feb-18.
@@ -30,7 +25,7 @@ public class MarketAdapter extends FirebaseRecyclerAdapter<Products,MarketAdapte
         viewHolder.price.setText(String.valueOf(model.getPrice()));
         viewHolder.measure.setText(model.getMeasure());
         viewHolder.name.setText(model.getName());
-       viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                Products auxProduts= getItem(viewHolder.getAdapterPosition());

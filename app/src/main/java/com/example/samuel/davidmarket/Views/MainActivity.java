@@ -1,4 +1,4 @@
-package com.example.samuel.davidmarket;
+package com.example.samuel.davidmarket.Views;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +14,9 @@ import android.view.View;
 
 import com.example.samuel.davidmarket.Adapters.MarketAdapter;
 import com.example.samuel.davidmarket.Finder.FinderDialogFragment;
+import com.example.samuel.davidmarket.Interface.ListernerProducts;
 import com.example.samuel.davidmarket.Models.Products;
+import com.example.samuel.davidmarket.R;
 
 public class MainActivity extends AppCompatActivity implements ListernerProducts {
 
@@ -25,11 +27,15 @@ public class MainActivity extends AppCompatActivity implements ListernerProducts
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.layoutRV);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
         MarketAdapter adapter = new MarketAdapter(this);
         recyclerView.setAdapter(adapter);
+
+
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,8 +53,17 @@ public class MainActivity extends AppCompatActivity implements ListernerProducts
                 startActivity(intent);*/
             }
         });
-    }
 
+        FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab2);
+
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,CarActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
 
     @Override
     public void click(Products products, String name, String measure, String price) {

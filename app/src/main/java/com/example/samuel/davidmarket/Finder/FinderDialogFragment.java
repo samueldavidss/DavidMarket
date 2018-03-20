@@ -15,8 +15,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.samuel.davidmarket.DescriptionActivity;
-import com.example.samuel.davidmarket.FinderCallback;
+import com.example.samuel.davidmarket.Views.DescriptionActivity;
+import com.example.samuel.davidmarket.Interface.FinderCallback;
 import com.example.samuel.davidmarket.R;
 import com.example.samuel.davidmarket.UserSearch;
 

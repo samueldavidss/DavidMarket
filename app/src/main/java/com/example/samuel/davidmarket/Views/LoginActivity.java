@@ -1,4 +1,4 @@
-package com.example.samuel.davidmarket;
+package com.example.samuel.davidmarket.Views;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.samuel.davidmarket.Models.Users;
 import com.example.samuel.davidmarket.Queries.CurrentUser;
 import com.example.samuel.davidmarket.Queries.References;
+import com.example.samuel.davidmarket.R;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.ResultCodes;
 import com.google.firebase.database.DatabaseReference;
@@ -57,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         user.setKey(new CurrentUser().getCurrentUser().getUid());
         String key = (new CurrentUser().getCurrentUser().getUid());
         dbRef.setValue(user);
-        Intent intent = new Intent(this, Main2Activity.class);
+        Intent intent = new Intent(this, FormActivity.class);
         intent.putExtra("key",key);
         startActivity(intent);
         finish();

@@ -1,4 +1,4 @@
-package com.example.samuel.davidmarket;
+package com.example.samuel.davidmarket.Interface;
 
 import com.example.samuel.davidmarket.Models.Products;
 

@@ -3,6 +3,7 @@ package com.example.samuel.davidmarket;
 import android.content.Context;
 import android.widget.Toast;
 
+import com.example.samuel.davidmarket.Interface.FinderCallback;
 import com.example.samuel.davidmarket.Models.Products;
 import com.example.samuel.davidmarket.Queries.References;
 import com.google.firebase.database.DataSnapshot;
